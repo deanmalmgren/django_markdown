@@ -8,26 +8,29 @@ Documentaton available at pypi_ or github_.
 
 .. _badges:
 
-.. image:: https://secure.travis-ci.org/klen/django_markdown.png?branch=develop
+.. image:: http://img.shields.io/travis/klen/django_markdown.svg?style=flat-square
     :target: http://travis-ci.org/klen/django_markdown
     :alt: Build Status
 
-.. image:: https://coveralls.io/repos/klen/django_markdown/badge.png?branch=develop
-    :target: https://coveralls.io/r/klen/django_markdown?branch=develop
-    :alt: Coveralls
+.. image:: http://img.shields.io/coveralls/klen/django_markdown.svg?style=flat-square
+    :target: https://coveralls.io/r/klen/django_markdown
+    :alt: Coverals
 
-.. image:: https://pypip.in/v/django-markdown/badge.png
-    :target: https://crate.io/packages/django_markdown
+.. image:: http://img.shields.io/pypi/v/django_markdown.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/django_markdown
     :alt: Version
 
-.. image:: https://pypip.in/d/django-markdown/badge.png
-    :target: https://crate.io/packages/django_markdown
+.. image:: http://img.shields.io/pypi/dm/django_markdown.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/django_markdown
     :alt: Downloads
 
-.. image:: https://dl.dropboxusercontent.com/u/487440/reformal/donate.png
-    :target: https://www.gittip.com/klen/
-    :alt: Donate
+.. image:: http://img.shields.io/pypi/l/django_markdown.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/django_markdown
+    :alt: License
 
+.. image:: http://img.shields.io/gratipay/klen.svg?style=flat-square
+    :target: https://www.gratipay.com/klen/
+    :alt: Donate
 
 .. contents::
 
@@ -87,6 +90,13 @@ Use django_markdown
 
     from django_markdown.admin import MarkdownModelAdmin
     admin.site.register(MyModel, MarkdownModelAdmin)
+
+#) Admin Overrides: (If you don't want to subclass package ModelAdmin's) ::
+
+    from django.contrib import admin
+
+    class YourModelAdmin(admin.ModelAdmin):
+        formfield_overrides = {MarkdownField: {'widget': AdminMarkdownWidget}}
 
 #) Flatpages: ::
 
@@ -169,7 +179,7 @@ Contributors
 
 * klen_ (Kirill Klenov)
 
-* yavorskiy_ (Sergii Iavorskyi) 
+* yavorskiy_ (Sergii Iavorskyi)
 
 
 License
